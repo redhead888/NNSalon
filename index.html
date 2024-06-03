@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <title>NNSalon</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-line">
+                
+                <div class="header-logo">
+                    <img src ="image/logo.png">
+                </div>
+                
+                <div class="nav">
+                    <a class="nav-item" href="a">УСЛУГИ</a>
+                    <a class ="nav-item" href="#about-section">О НАС</a>
+                </div>
+
+                <div class="phone-holder">
+                    <div class="phone">
+                        <div class="number"><a class="num" href="tel:8-906-554-53-17">8-906-554-53-17</a>
+                        </div>
+                        <div class="phone-text">
+                        ЗАКАЗАТЬ ЗВОНОК
+                        </div>
+                    </div>
+            </div>
+
+                <div class="btn">
+                    <a href="#" class="button" id="openRequestModal">Оставить заявку</a>
+                </div>  
+                <div id="requestModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form id="requestForm">
+                            <label for="requestName">Имя:</label>
+                            <input type="text" id="requestName" name="requestName" required>
+                
+                            <label for="requestPhone">Номер телефона:</label>
+                            <input type="tel" id="requestPhone" name="requestPhone" required>
+                
+                            <button type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>    
+
+                
+            </div>
+            <div class="header-down">
+                <div class="header-title">
+                    Место, которое заставляет вас чувствовать себя великолепно
+                        <div class="header-subtitle">
+                            NNSalon
+                        </div>
+                        <div class="header-suptitle">
+                            САЛОН КРАСОТЫ И ЗДОРОВЬЯ
+                        </div>
+                        
+                        <div class="header-btn">
+                            <a href="#" class="header-button" id="openModal">Записаться на приём</a>
+                        </div>
+                        
+                        <!-- Модальное окно для формы записи -->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <form id="appointmentForm">
+                                    <label for="name">Имя:</label>
+                                    <input type="text" id="name" name="name" required>
+                        
+                                    <label for="phone">Номер телефона:</label>
+                                    <input type="tel" id="phone" name="phone" pattern="[0-9]*" required>
+                        
+                                    <label for="date">Дата:</label>
+                                    <input type="date" id="date" name="date" required>
+                        
+                                    <label for="time">Время:</label>
+                                    <input type="time" id="time" name="time" min="10:00" max="22:00" required>
+                        
+                                    <button type="submit">Отправить</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Модальное окно для сообщения о записи -->
+                        <div id="successModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Запись принята</h2>
+                                <p>. Если возникнут какие нибудь вопросы , пожалуйста, свяжитесь с нами по телефону +7-906-554-53-17.</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <script src="main.js"></script>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="container">
+            <div class="card-holder">
+                <div class="card">
+                    <div class="card-title">
+                        <span>Топ</span> Мастера
+                    </div>
+                    <div class="card-desc">
+                        В нашем салоне красоты работают только лучшие из лучших мастера. Наши специалисты обладают высоким уровнем профессионализма и опыта, гарантируя вам идеальный результат каждый раз. 
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <span> Цены</span> №1вРоссии
+                    </div>
+                    <div class="card-desc">
+                        Предлогаем вам  только самые высококачественные услуги по доступным тарифам. Мы стремимся обеспечить нашим клиентам идеальное сочетание качества обслуживания и привлекательности цен, делая ваше посещение у нас приятным и выгодным.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <span>Время </span> Работы
+                    </div>
+                    <div class="card-desc">
+                        В нашем салоне красоты мы работаем для вашего удобства 12 часов в день без выходных. Это означает, что мы всегда готовы принять вас в любое время и обеспечить высококачественное обслуживание в удобное для вас время, даже в самые занятые дни недели.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="history">
+    <div class="container">
+        <div class="history-holder">
+            <div class="history-info">
+                <section id="about-section"></section>
+                    <div class="history-title">
+                        О нас
+                    </div>
+                    <div class="history-disc">
+                        Добро пожаловать в NNStore – ваш оазис красоты и здоровья! Мы гордимся быть вашим надежным партнером в путешествии к лучшей версии себя.Наша команда состоит из лучших специалистов индустрии красоты и здоровья. Наши мастера – настоящие профессионалы своего дела, обладающие богатым опытом и креативным подходом. Мы постоянно совершенствуем свои навыки, чтобы предоставлять вам только самые инновационные и эффективные процедуры.В NNStore мы ценим каждого нашего клиента. Мы создаем уютную и дружелюбную атмосферу, где вы сможете расслабиться и насладиться заботой о себе. Мы стремимся к тому, чтобы ваше посещение у нас стало настоящим удовольствием. Приходите в NNStore и дайте себе заслуженный уход и внимание, которые вы заслуживаете. Доверьтесь профессионалам, и позвольте нам помочь вам почувствовать себя прекрасно внутри и снаружи.
+                    </div>
+                </section>
+            </div>
+            <div class="history-images">
+                <img class="images-1" src="image/1.jpg" alt="">
+                <img class="images-2" src="image/2.jpg" alt="">
+                <img class="images-3" src="image/3.jpg" alt="">
+                <img class="images-4" src="image/4.jpg" alt="">
+                <img class="images-5" src="image/5.jpg" alt="">
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="pink-block">
+    <div class="container">
+        <div class="block-holder">
+            <div class="left">
+                <div class="left-title">
+                    Получите карточку салона
+                </div>
+                <div class="left-text">
+                    На каждое второе посещение получайте скидку 10%
+                    
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-button">
+                    <a href="#" class="right-btn" id="openRightModal">Подробнее</a>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="services">
+    <div class="container">
+        <div class="services-title">
+            Спектор <span>Услуг</span>
+        </div>
+        <div class="service">
+            <div class="services-imgs">
+                <img src="image/services.jpg"class="services">
+            </div>
+            <div class="services-item">
+                <div class="manik-item">
+                    <img src="image/manik.jpg" class="img-same-size">
+                    <div class="manik-text">
+                        Маникюр-------------------------- от 500₽
+                    </div>
+                </div>
+                <div class="manik-item">
+                    <img src="image/barber.jpg" class="img-same-size">
+                    <div class="manik-text">
+                        Стрижка-------------------------- от 200₽
+                    </div>
+                </div>
+                <div class="manik-item">
+                    <img src="image/spa.jpg" class="img-same-size">
+                    <div class="manik-text">
+                        Спа-услуги-------------------------- от 1000₽
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button onclick="scrollToTop()" class="back-to-top" style="display: block;"></button>
+
+
+
+<div class="footer">
+    Эбаев Норбек Исип
+
+</div>
+</body>
+</html>
