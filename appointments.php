@@ -12,18 +12,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Проверяем, что данные пришли из формы
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $conn->real_escape_string($_POST['requestName']);
-    $phone = $conn->real_escape_string($_POST['requestPhone']);
+// Получаем данные из POST запроса
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$date = $_POST['date'];
+$time = $_POST['time'];
 
-    $sql = "INSERT INTO requests (name, phone, reg_date) VALUES ('$name', '$phone', NOW())";
+// Добавляем данные в базу данных
+$sql = "INSERT INTO appointments (name, phone, date, time) VALUES ('$name', '$phone', '$date', '$time')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Запись успешно добавлена";
-    } else {
-        echo "Ошибка: " . $sql . "<br>" . $conn->error;
-    }
+if ($conn->query($sql) === TRUE) {
+    echo "Данные успешно добавлены";
+} else {
+    echo "Ошибка: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();

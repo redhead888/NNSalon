@@ -3,19 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     links.forEach(function(link) {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // Предотвращаем стандартное действие ссылки
+            e.preventDefault(); 
             
-            var targetId = this.getAttribute('href'); // Получаем значение атрибута href
-            var targetElement = document.querySelector(targetId); // Находим элемент на странице по ID
+            var targetId = this.getAttribute('href'); 
+            var targetElement = document.querySelector(targetId);  
             
             if (targetElement) {
                 var offset = targetElement.getBoundingClientRect().top + window.pageYOffset; // Вычисляем отступ от верха страницы до элемента
-                window.scrollTo({ top: offset, behavior: 'smooth' }); // Прокручиваем страницу к элементу
+                window.scrollTo({ top: offset, behavior: 'smooth' }); 
             }
         });
     });
 });
-
 
 function scrollToSection(sectionId) {
     var section = document.getElementById(sectionId);
@@ -40,15 +39,6 @@ function scrollFunction() {
 
 
 
-
-
-
-
-
-
-
-
-// Получаем элементы
 var modal = document.getElementById("myModal");
 var successModal = document.getElementById("successModal");
 var requestModal = document.getElementById("requestModal");
@@ -66,7 +56,6 @@ var requestPhoneInput = document.getElementById("requestPhone");
 var textModal = document.getElementById("textModal");
 var openRightModalBtn = document.getElementById("openRightModal");
 
-// Функция для сброса значений полей формы
 function resetForm() {
     nameInput.value = ""; 
     phoneInput.value = ""; 
@@ -79,22 +68,15 @@ function resetRequestForm() {
     requestPhoneInput.value = "";
 }
 
-// Когда пользователь нажимает на кнопку "Записаться на приём", открыть модальное окно
 btn.onclick = function() {
     modal.style.display = "block";
     resetForm();
 }
-
-
-// Когда пользователь нажимает на кнопку "Оставить заявку", открыть модальное окно
 requestBtn.onclick = function() {
     requestModal.style.display = "block";
     resetRequestForm();
 }
 
-
-
-// Когда пользователь нажимает на кнопку "Закрыть" (x) или вне модального окна, закрыть модальное окно
 closeBtn.forEach(function(button) {
     button.onclick = function() {
         modal.style.display = "none";
@@ -111,11 +93,10 @@ window.onclick = function(event) {
     }
 }
 
-// Устанавливаем минимальную дату на текущий день
 window.onload = function() {
     var today = new Date();
     var day = today.getDate();
-    var month = today.getMonth() + 1; // Январь - это 0
+    var month = today.getMonth() + 1; 
     var year = today.getFullYear();
 
     if (day < 10) {
@@ -129,7 +110,6 @@ window.onload = function() {
     dateInput.setAttribute('min', todayDate);
 }
 
-// При отправке формы записи на приём
 form.addEventListener("submit", function(event) {
     event.preventDefault(); 
 
@@ -149,10 +129,12 @@ form.addEventListener("submit", function(event) {
 });
 
 
-// При отправке формы заявки
 requestForm.addEventListener("submit", function(event) {
     event.preventDefault(); 
     requestModal.style.display = "none"; 
     successModal.style.display = "block"; 
     resetRequestForm(); 
 });
+
+
+

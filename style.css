@@ -74,7 +74,6 @@ body.modal-open {
 }
 
 
-/* Стили для модального окна */
 .modal {
     display: none;
     position: fixed;
@@ -84,24 +83,23 @@ body.modal-open {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: transparent; /* Прозрачный фон */
-    backdrop-filter: blur(5px); /* Применяем размытие к заднему фону */
+    background-color: transparent; 
+    backdrop-filter: blur(5px); 
 }
 
-/* Стили для контента модального окна */
 .modal-content {
-    background-color: #88EBDF; /* Прозрачность 80% для непрозрачного содержимого */
+    background-color: #88EBDF; 
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #88EBDF;
     width: 80%;
     max-width: 400px;
     border-radius: 10px;
-    text-align: center; /* Центрирование текста */
-    color: white; /* Белый цвет текста */
+    text-align: center; 
+    color: white; 
 }
 
-/* Стили для кнопки закрытия */
+
 .close {
     color: #aaa;
     float: right;
@@ -109,7 +107,7 @@ body.modal-open {
     font-weight: bold;
 }
 
-/* Стили для кнопки закрытия при наведении или фокусе */
+
 .close:hover,
 .close:focus {
     color: black;
@@ -117,7 +115,7 @@ body.modal-open {
     cursor: pointer;
 }
 
-/* Стили для формы */
+
 form {
     display: flex;
     flex-direction: column;
@@ -282,17 +280,15 @@ form label, form input {
     font-size: 23px;
     font-weight: 300;  
 }
-.right-btn{
-    background-color: #88EBDF;
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 18px;
 
-    transition: background-color 0.3s linear;
+.pink-image-2{
+    width: 300px;
+    padding-bottom: 200px;
 }
-.right-btn:hover{
-    background-color: #68a59e;
-}
+
+
+
+
 .block-holder{
 display: flex;
 justify-content: space-between;
@@ -358,3 +354,6 @@ align-items: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
+

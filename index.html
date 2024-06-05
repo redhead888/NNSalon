@@ -23,7 +23,7 @@
                 </div>
                 
                 <div class="nav">
-                    <a class="nav-item" href="a">УСЛУГИ</a>
+                    <a  href="services.html">УСЛУГИ</a>
                     <a class ="nav-item" href="#about-section">О НАС</a>
                 </div>
 
@@ -37,25 +37,77 @@
                     </div>
             </div>
 
-                <div class="btn">
-                    <a href="#" class="button" id="openRequestModal">Оставить заявку</a>
-                </div>  
-                <div id="requestModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <form id="requestForm">
-                            <label for="requestName">Имя:</label>
-                            <input type="text" id="requestName" name="requestName" required>
-                
-                            <label for="requestPhone">Номер телефона:</label>
-                            <input type="tel" id="requestPhone" name="requestPhone" required>
-                
-                            <button type="submit">Отправить</button>
-                        </form>
-                    </div>
-                </div>    
 
-                
+
+
+
+
+
+            <div class="btn">
+                <a href="#" class="button" id="openRequestModal">Оставить заявку</a>
+            </div>  
+            <div id="requestModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="requestForm">
+                        <label for="requestName">Имя:</label>
+                        <input type="text" id="requestName" name="requestName" required>
+                        
+                        <label for="requestPhone">Номер телефона:</label>
+                        <input type="tel" id="requestPhone" name="requestPhone" required>
+                        
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        
+            <script>
+                document.getElementById('openRequestModal').onclick = function() {
+                    document.getElementById('requestModal').style.display = "block";
+                }
+        
+                document.getElementsByClassName('close')[0].onclick = function() {
+                    document.getElementById('requestModal').style.display = "none";
+                }
+        
+                window.onclick = function(event) {
+                    if (event.target == document.getElementById('requestModal')) {
+                        document.getElementById('requestModal').style.display = "none";
+                    }
+                }
+        
+                document.getElementById('requestForm').onsubmit = function(event) {
+                    event.preventDefault();
+                    
+                    let formData = new FormData(this);
+        
+                    fetch('php.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data);
+                        document.getElementById('requestModal').style.display = "none";
+                    })
+                    .catch(error => console.error('Error:', error));
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
             </div>
             <div class="header-down">
                 <div class="header-title">
@@ -66,42 +118,92 @@
                         <div class="header-suptitle">
                             САЛОН КРАСОТЫ И ЗДОРОВЬЯ
                         </div>
+
+
+
+
                         
-                        <div class="header-btn">
-                            <a href="#" class="header-button" id="openModal">Записаться на приём</a>
-                        </div>
-                        
-                        <!-- Модальное окно для формы записи -->
-                        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <form id="appointmentForm">
-                                    <label for="name">Имя:</label>
-                                    <input type="text" id="name" name="name" required>
-                        
-                                    <label for="phone">Номер телефона:</label>
-                                    <input type="tel" id="phone" name="phone" pattern="[0-9]*" required>
-                        
-                                    <label for="date">Дата:</label>
-                                    <input type="date" id="date" name="date" required>
-                        
-                                    <label for="time">Время:</label>
-                                    <input type="time" id="time" name="time" min="10:00" max="22:00" required>
-                        
-                                    <button type="submit">Отправить</button>
-                                </form>
-                            </div>
-                        </div>
-                        
-                        <!-- Модальное окно для сообщения о записи -->
-                        <div id="successModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <h2>Запись принята</h2>
-                                <p>. Если возникнут какие нибудь вопросы , пожалуйста, свяжитесь с нами по телефону +7-906-554-53-17.</p>
-                            </div>
-                        </div>
-                        
+<div class="header-btn">
+    <a href="#" class="header-button" id="openModal">Записаться на приём</a>
+</div>
+
+<!-- Модальное окно для формы записи -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="appointmentForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Номер телефона:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]*" required>
+
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Время:</label>
+            <input type="time" id="time" name="time" min="10:00" max="22:00" required>
+
+            <button type="button" onclick="submitForm()">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("openModal");
+    var span = document.getElementsByClassName("close")[0];
+    
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    // Функция для отправки данных на сервер
+    function submitForm() {
+        var xhr = new XMLHttpRequest();
+        var formData = new FormData(document.getElementById("appointmentForm"));
+    
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                if (xhr.status == 200) {
+                    // В случае успешного ответа сервера
+                    alert("Данные успешно отправлены");
+                    modal.style.display = "none"; // Закрываем модальное окно после отправки данных
+                } else {
+                    // В случае ошибки
+                    alert("Произошла ошибка при отправке данных");
+                }
+            }
+        };
+    
+        xhr.open("POST", "appointments.php", true); // Замените php.php на путь к вашему обработчику PHP
+        xhr.send(formData);
+    }
+    
+    // Обработчик отправки формы
+    document.getElementById("appointmentForm").onsubmit = function(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+        submitForm(); // Вызываем функцию отправки данных на сервер
+    };
+</script>
+
+
+
+
+
+
+
+
                         
                         <script src="main.js"></script>
                 </div>   
@@ -174,8 +276,10 @@
                 </div>
             </div>
             <div class="right">
-                <div class="right-button">
-                    <a href="#" class="right-btn" id="openRightModal">Подробнее</a>
+                <div class="Pink-logo">
+                    <img class="pink-image-2" src ="image/Sale.png" width="100%">
+                    <img class="pink-image-1" src ="image/pink-logo.png">
+                    
                 </div>
 
             </div>
@@ -222,8 +326,7 @@
 
 
 <div class="footer">
-    Эбаев Норбек Исип
-
+ООО "NNSalon""
 </div>
 </body>
 </html>
