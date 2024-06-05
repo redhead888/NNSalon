@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-services.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +22,8 @@
                 <div class="header-logo">
                     <img src ="image/logo.png">
                 </div>
-                
                 <div class="nav">
-                    <a  href="index.html">ГЛАВНАЯ</a>
+                    <a class ="nav-item2" href="index.html">ГЛАВНАЯ</a>
                     <a class ="nav-item" href="#about-section">О НАС</a>
                 </div>
 
@@ -36,23 +36,219 @@
                         </div>
                     </div>
                 </div>
-
-
+                <div class="btn">
+                    <a href="#" class="button" id="openRequestModal">Оставить заявку</a>
+                </div>  
+                <div id="requestModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form id="requestForm">
+                            <label for="requestName">Имя:</label>
+                            <input type="text" id="requestName" name="requestName" required>
+                            
+                            <label for="requestPhone">Номер телефона:</label>
+                            <input type="tel" id="requestPhone" name="requestPhone" required>
+                            
+                            <button type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <script>
+                    document.getElementById('openRequestModal').onclick = function() {
+                        document.getElementById('requestModal').style.display = "block";
+                    }
+            
+                    document.getElementsByClassName('close')[0].onclick = function() {
+                        document.getElementById('requestModal').style.display = "none";
+                    }
+            
+                    window.onclick = function(event) {
+                        if (event.target == document.getElementById('requestModal')) {
+                            document.getElementById('requestModal').style.display = "none";
+                        }
+                    }
+            
+                    document.getElementById('requestForm').onsubmit = function(event) {
+                        event.preventDefault();
+                        
+                        let formData = new FormData(this);
+            
+                        fetch('php.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            alert(data);
+                            document.getElementById('requestModal').style.display = "none";
+                        })
+                        .catch(error => console.error('Error:', error));
+                    }
+                </script>
             </div>
-    <div class="services">
-        <div class="container">
-            <div class="services-title">
-                Спектор <span>Услуг</span>
+        </div> 
+        <div class="servise-header-title">
+            Услуги которые мы предоставляем
+        </div>
+    </div> 
+    <div class="service-cards">
+        <div class="container-card">
+            <div class="service-card-holder">
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/nogti.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        МАНИКЮР/ПЕДИКЮР
+                    </div>
+                    <div class="service-card-desc">
+                        Бережный и тщательный уход за ногтями, кожей ручек и ножек
+                    </div>
+                    <div class="service-card-desc">
+                        от 500 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 20 минут
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/visag.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        ВИЗАЖ
+                    </div>
+                    <div class="service-card-desc">
+                        Услуги визажиста и стилиста по прическам для эффектного внешнего вида
+                    </div>
+                    <div class="service-card-desc">
+                        от 1200 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 30 минут
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/resnici.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        БРОВИ/РЕСНИЦЫ
+                    </div>
+                    <div class="service-card-desc">
+                        Современные салонные процедуры, которые помогут сделать взгляд незабываемым
+                    </div>
+                    <div class="service-card-desc">
+                        от 1000 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 45 минут
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-cards">
+        <div class="container-card">
+            <div class="service-card-holder">
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/depil.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        ДЕПИЛЯЦИЯ
+                    </div>
+                    <div class="service-card-desc">
+                        Эпиляция в Москве - идеально гладкая и ухоженная кожа                        
+                    </div>
+                    <div class="service-card-desc">
+                        от 300 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 15 минут
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/masag.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        МАССАЖ
+                    </div>
+                    <div class="service-card-desc">
+                        Различные виды массажа для Вашего здоровья и красоты
+                    </div>
+                    <div class="service-card-desc">
+                        от 900 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 30 минут
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/zagar.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        ЗАГАР                    
+                    </div>
+                    <div class="service-card-desc">
+                        Красивый шоколадный оттенок кожи круглый год 
+                    </div>
+                    <div class="service-card-desc">
+                        от 500 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 10 минут
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-cards">
+        <div class="container-card">
+            <div class="service-card-holder">
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/barber.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        ПАРИКМАХЕР                    
+                    </div>
+                    <div class="service-card-desc">
+                        Широкий спектр услуг по подбору и созданию причесок по доступным ценам                    </div>
+                    <div class="service-card-desc">
+                        от 150 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 5 минут
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="services-cards-image">
+                        <img class="services-cards-image1" src="image-service/kor.png" width="100%">
+                    </div>
+                    <div class="service-card-title">
+                        КОРРЕКЦИЯ ТЕЛА
+                    </div>
+                    <div class="service-card-desc">
+                        Салон красоты «Грааль» предлагает комплексы по уходу за телом, которые помогут справиться с различными проблемами: лишний вес, целлюлит, дряблость кожи.                    </div>
+                    <div class="service-card-desc">
+                        от 3000 ₽
+                    </div>
+                    <div class="service-card-desc">
+                        Оринтеровочное время от 30 минут
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-        </div> 
-    </div> 
+    <button onclick="scrollToTop()" class="back-to-top" style="display: block;"></button>
 
-
-
-
-    
+    <div class="footer">
+        ООО "NNSalon""
+    </div>
 </body>
 </html>
