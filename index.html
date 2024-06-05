@@ -37,12 +37,6 @@
                     </div>
             </div>
 
-
-
-
-
-
-
             <div class="btn">
                 <a href="#" class="button" id="openRequestModal">Оставить заявку</a>
             </div>  
@@ -94,20 +88,6 @@
                 }
             </script>
 
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
             </div>
             <div class="header-down">
                 <div class="header-title">
@@ -118,11 +98,7 @@
                         <div class="header-suptitle">
                             САЛОН КРАСОТЫ И ЗДОРОВЬЯ
                         </div>
-
-
-
-
-                        
+        
 <div class="header-btn">
     <a href="#" class="header-button" id="openModal">Записаться на приём</a>
 </div>
@@ -168,7 +144,6 @@
         }
     }
     
-    // Функция для отправки данных на сервер
     function submitForm() {
         var xhr = new XMLHttpRequest();
         var formData = new FormData(document.getElementById("appointmentForm"));
@@ -176,35 +151,24 @@
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 if (xhr.status == 200) {
-                    // В случае успешного ответа сервера
                     alert("Данные успешно отправлены");
-                    modal.style.display = "none"; // Закрываем модальное окно после отправки данных
+                    modal.style.display = "none"; 
                 } else {
-                    // В случае ошибки
                     alert("Произошла ошибка при отправке данных");
                 }
             }
         };
     
-        xhr.open("POST", "appointments.php", true); // Замените php.php на путь к вашему обработчику PHP
+        xhr.open("POST", "appointments.php", true); 
         xhr.send(formData);
     }
     
-    // Обработчик отправки формы
     document.getElementById("appointmentForm").onsubmit = function(event) {
-        event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузку страницы)
-        submitForm(); // Вызываем функцию отправки данных на сервер
+        event.preventDefault(); 
+        submitForm(); 
     };
 </script>
-
-
-
-
-
-
-
-
-                        
+    
                         <script src="main.js"></script>
                 </div>   
             </div>
