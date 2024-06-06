@@ -40,5 +40,33 @@ margin-bottom: 100px;
     text-align: center;
     left: 0;
     margin-top: 280px;
+}
+.images-1 {
+    position: absolute;
+    z-index: 0;
+    top: 46px;
+    left: -698px;
+    height: 267px;
+}
+.images-2 {
+    position: absolute;
+    z-index: 0;
+    top: 304px;
+    left: -702px;
+    height: 267px;
+}
+.images-3 {
+    position: absolute;
+    z-index: 0;
+    top: 46px;
+    left: -350px;
+    height: 267px;
+}
 
+.images-5 {
+    position: absolute;
+    z-index: 0;
+    top: 304px;
+    left: -250px;
+    height: 267px;
 }

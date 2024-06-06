@@ -125,6 +125,12 @@ body.modal-open {
     font-size: 28px;
     font-weight: bold;
 }
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
 
 .close:hover,

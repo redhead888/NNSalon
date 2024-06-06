@@ -1,0 +1,48 @@
+@media (max-width: 1000px) {
+    .header-logo{
+        display: none;
+    }
+    .servise-header-title{
+        margin-top: 40px;
+    }
+    .header{
+        height: 50vh;
+    }
+
+    .service-card{
+        width: 100%;
+        margin-top: -50px;
+        padding-bottom: 20px;
+    }
+    .service-card-holder{
+        display: block;
+    }
+
+    .header-title{
+        position: static;
+    }
+    .header-suptitle:after,
+    .header-suptitle:before{
+        display: none;
+    }
+    .back-to-top{
+        width: 130px;
+        height: 130px;
+    }
+    .modal-content{
+        max-width: 590px;
+    }
+    .history-disc{
+        width: 700px;
+    }
+    .history-title,
+    .history-desc{
+        width: auto;
+    }
+    .nav-item{
+        margin-right: 35px;
+    }
+    .history-images{
+        display: none;
+    }
+}
