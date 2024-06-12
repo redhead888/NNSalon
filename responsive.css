@@ -66,6 +66,9 @@
     .header-logo{
         display: none;
     }
+    .header{
+        height: 30vh;
+    }
 
 }
 @media(max-width:800px){
