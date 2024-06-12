@@ -46,3 +46,14 @@
         display: none;
     }
 }
+@media(max-width:1820px){
+    .history-images{
+        display: none;
+    }
+    .history-disc{
+        width: auto;
+    }
+    .history-title{
+        width: auto;
+    }
+}
